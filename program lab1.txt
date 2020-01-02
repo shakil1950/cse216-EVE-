@@ -1,0 +1,269 @@
+
+#include<stdio.h>
+void arr(int a[],int s,int e);
+void rearr(int b[],int start,int end);
+
+int main()
+{
+	int i,j,pos,n=10,temp,max,x,flag=0,y,z;
+	
+	int a[100]={10,8,2,7,6,4,1,9,34,2};
+	printf("print whole array\n");
+    for(i=0;i<n;i++)
+    {
+    	printf("%d\t",a[i]);
+	}
+	
+	/* insert value at 10th index*/
+	a[10]=12;
+	printf("Insert value at 10th index\n");
+	for(i=0;i<n+1;i++)
+	{
+		printf("%d\t",a[i]);
+	}
+	/* update 5th index */
+	a[5]=23;
+	printf("\nUpdate 5th index with another value\n ");
+	for(i=0;i<11;i++)
+	{
+		printf("%d\t",a[i]);
+	}
+	/* Search value X*/
+	
+	printf("\n Enter your search value= ");
+	scanf("%d",&x);
+	for(i=0;i<11;i++)
+	{
+		if(a[i]==x)
+		{
+			flag=1;
+			break;
+		}
+	}
+	
+	if(flag==1)
+	{
+		printf("Data found");
+	}
+	else
+	{
+		printf("Data not found");
+	}
+	
+	/* insert value at 3rd index*/
+	printf("\nNow insert a value at 3rd index\n enter value=");
+	scanf("%d",&y);
+	for(i=10;i>=3;i--)
+	{
+		a[i+1]=a[i];
+	}
+	a[3]=y;
+	for(i=0;i<12;i++)
+	{
+		printf("%d\t",a[i]);
+	}
+	/* delete value from zth index*/
+	printf("\nEnter index number to delete =");
+	scanf("%d",&z);
+	for(i=z;i<12;i++)
+	{
+		a[i]=a[i+1];
+	}
+	
+	for(i=0;i<11;i++)
+	{
+		printf("%d\t",a[i]);
+	}
+	
+	printf("\nprint array using recursive function\n");
+	arr(a,0,n);
+	printf("\n print array in reversr order\n");
+	rearr(a,0,n);
+
+	
+	return 0;
+}
+/* Print array using recursive function*/ 
+void arr(int a[],int s,int e)
+{
+	if(s>e)
+	{
+		return;
+	}
+	printf("%d\t",a[s]);
+	arr(a,s+1,e);
+}
+void rearr(int b[],int start,int end)
+{
+	if(start>end)
+	{
+		return;
+	}
+	printf("%d\t",b[end]);
+	rearr(b,start,end-1);
+}
+
+2.
+
+a./* print array*/
+#include<stdio.h>
+
+int main()
+{
+		int i,j,pos,n,temp,min;
+	
+	int a[100]={10,8,2,7,6,4,1,9};
+	printf("\n ******Before sorting*****\n");
+	
+	for(i=0;i<8;i++)
+	{
+		printf("%d\t",a[i]);
+	}
+	for(i=0;i<8;i++)
+	{
+		min=a[i];
+		pos=i;
+		for(j=i+1;j<8;j++)
+		{
+			if(a[j]<min)
+			{
+				min=a[j];
+				pos=j;
+			
+			}
+		}
+		temp=a[i];
+		a[i]=a[pos];
+		a[pos]=temp;
+	}
+	
+	printf("\n ******After sorting******\n");
+	for(i=0;i<8;i++)
+	{
+		printf("%d\t",a[i]);
+	}
+	return 0;
+}
+
+2.b
+#include<stdio.h>
+
+int main()
+{
+		int i,j,pos,n,temp,min;
+	
+	int a[100]={10,8,2,7,6,4,1,9};
+	printf("\n ******Before sorting*****\n");
+	
+	for(i=0;i<8;i++)
+	{
+		printf("%d\t",a[i]);
+	}
+	for(i=0;i<8;i++)
+	{
+		min=a[i];
+		pos=i;
+		for(j=i+1;j<8;j++)
+		{
+			if(a[j]<min)
+			{
+				min=a[j];
+				pos=j;
+			
+			}
+		}
+		temp=a[i];
+		a[i]=a[pos];
+		a[pos]=temp;
+	}
+	
+	printf("\n ******After sorting******\n");
+	for(i=7;i>=0;i--)
+	{
+		printf("%d\t",a[i]);
+	}
+	return 0;
+}
+
+2.c
+#include<stdio.h>
+
+int main()
+{
+		int i,j,pos,n,temp,max;
+	
+	int a[100]={10,8,2,7,6,4,1,9};
+	printf("\n ******Before sorting*****\n");
+	
+	for(i=0;i<8;i++)
+	{
+		printf("%d\t",a[i]);
+	}
+	for(i=0;i<8;i++)
+	{
+		max=a[i];
+		pos=i;
+		for(j=i+1;j<8;j++)
+		{
+			if(a[pos]<a[j])
+			{
+				max=a[j];
+				pos=j;
+			
+			}
+		}
+		temp=a[i];
+		a[i]=a[pos];
+		a[pos]=temp;
+	}
+	
+	printf("\n ******After sorting******\n");
+	for(i=7;i>=0;i--)
+	{
+		printf("%d\t",a[i]);
+	}
+	return 0;
+}
+
+
+2.d
+#include<stdio.h>
+
+int main()
+{
+		int i,j,pos,n,temp,max;
+	
+	int a[100]={10,8,2,7,6,4,1,9};
+	printf("\n ******Before sorting*****\n");
+	
+	for(i=0;i<8;i++)
+	{
+		printf("%d\t",a[i]);
+	}
+	for(i=0;i<8;i++)
+	{
+		max=a[i];
+		pos=i;
+		for(j=i+1;j<8;j++)
+		{
+			if(a[pos]<a[j])
+			{
+				max=a[j];
+				pos=j;
+			
+			}
+		}
+		temp=a[i];
+		a[i]=a[pos];
+		a[pos]=temp;
+	}
+	
+	printf("\n ******After sorting******\n");
+	for(i=0;i<8;i++)
+	{
+		printf("%d\t",a[i]);
+	}
+	return 0;
+}
+
+
