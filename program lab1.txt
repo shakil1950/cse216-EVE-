@@ -1,4 +1,4 @@
-
+1. Write a c program to declare a array which size is 100, and initialize it with 10 values then perform those operation....
 #include<stdio.h>
 void arr(int a[],int s,int e);
 void rearr(int b[],int start,int end);
@@ -105,7 +105,7 @@ void rearr(int b[],int start,int end)
 
 2.
 
-a./* print array*/
+a.Write a c program to implement selection sort using minimum valu (ascending order)
 #include<stdio.h>
 
 int main()
@@ -145,7 +145,7 @@ int main()
 	return 0;
 }
 
-2.b
+2.b Write a c program to implement selection sort using minimum value (Decending order)
 #include<stdio.h>
 
 int main()
@@ -185,7 +185,7 @@ int main()
 	return 0;
 }
 
-2.c
+2.C. Write a c program to implement selection sort using maximum value (ascending order)
 #include<stdio.h>
 
 int main()
@@ -226,7 +226,7 @@ int main()
 }
 
 
-2.d
+2.d Write a c program to implement selection sort using maximum value (descending order )
 #include<stdio.h>
 
 int main()
