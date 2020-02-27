@@ -1,0 +1,108 @@
+
+/*Adjacency matrix */
+#include <stdio.h>
+int main()
+{
+	int mat[10][10];
+	int n,e,s,d,i,j,w;
+	freopen("file.txt","r",stdin);
+	scanf("%d %d",&n,&e);
+	for(i=0;i<n;i++)
+	{
+		for(j=0;j<n;j++)
+		{
+			mat[i][j]=0;
+		}
+	}
+	for(i=0;i<e;i++)
+	{
+		scanf("%d %d %d",&s,&d,&w);
+		mat[s][d]=w;
+		mat[d][s]=w;
+	}
+	
+	for(i=0;i<n;i++)
+	{
+		for(j=0;j<n;j++)
+		{
+			printf("%d  ",mat[i][j]);
+		}
+		
+		printf("\n");
+	}
+	
+	return 0;
+	
+}
+
+/* adjacency list with out weight*/
+#include<stdio.h>
+#include<iostream>
+#include<vector>
+using namespace std;
+
+int main()
+{
+	vector<int>adj[10];
+	int s,d,i,j,n,e;
+	freopen("file.txt","r",stdin);
+	scanf("%d %d",&n,&e);
+	for(i=0;i<e;i++)
+	{
+		scanf("%d %d",&s,&d);
+		adj[s].push_back(d);
+		adj[d].push_back(s);
+	}
+	for(i=0;i<n;i++)
+	{
+		printf("%d=>",i);
+		for(j=0;j<adj[i].size();j++)
+		{
+			printf("%d ",adj[i][j]);
+		}
+		
+		
+		printf("\n");
+	}
+	
+	return 0;
+	
+}
+
+
+/* Adjacency list with weight*/
+
+#include<stdio.h>
+#include<iostream>
+#include<vector>
+using namespace std;
+
+int main()
+{
+	vector<pair<int,int> >adj[10];
+	int s,d,i,j,n,e,w;
+	freopen("file.txt","r",stdin);
+	scanf("%d %d",&n,&e);
+	for(i=0;i<e;i++)
+	{
+		scanf("%d %d %d",&s,&d,&w);
+		adj[s].push_back(make_pair(d,w));
+		adj[d].push_back(make_pair(s,w));
+	}
+	for(i=0;i<n;i++)
+	{
+		printf("%d=>",i);
+		for(j=0;j<adj[i].size();j++)
+		{
+			printf("(%d,%d)  ",adj[i][j].first,adj[i][j].second);
+		}
+		
+		
+		printf("\n");
+	}
+	
+	return 0;
+	
+}
+
+
